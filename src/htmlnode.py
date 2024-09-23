@@ -60,5 +60,3 @@ class ParentNode(HTMLNode):
     def __repr__(self):
         return f"ParentNode({self.tag}, {self.children}, {self.props})"
 
-test = LeafNode("b", "Bold text")
-print(type(test))
