@@ -15,8 +15,8 @@ def markdown_to_html_node(markdown):
             case "code":
                 html_block_list.append(ParentNode("code", block_to_textnode_to_html(block[3:-3])))
             case "quote":
-                block = block.replace("\n>", "")
-                html_block_list.append(ParentNode("blockquote", block_to_textnode_to_html(block[1:])))
+                block = block.replace("\n> ", "")
+                html_block_list.append(ParentNode("blockquote", block_to_textnode_to_html(block[2:])))
             case "unordered_list":
                 block = list_tags(block, "unordered")
                 html_block_list.append(ParentNode("ul", block))
@@ -58,30 +58,4 @@ def list_tags(block, list_type):
     return html_lines
 
 
-
-
-
-bigtest = """### This *is the best* lesson **ever**!
-
-```it has code blocks
-that span multiple lines```
-
-*random* text
-
->a quote 
->or two
-
-1. A list
-2. that is ordered.
-
-* other lists
-
-more ranodm text
-oops typo, **not** going to fix that 
-
-"""
-
-
-test = """this is a 
-paragraph"""
 

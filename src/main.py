@@ -1,8 +1,16 @@
-from textnode import TextNode
+from page_generation import *
+
 
 def main():
-    test = TextNode("This is a text node", "bold", "https://www.boot.dev")
-    print(test)
+    static_to_public("static", "public", True)
+    generate_pages_recursive("content", template, "public")
+
+
+
+
+
+
+
 
 
 
